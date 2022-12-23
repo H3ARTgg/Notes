@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A03F2954E9390060E3AB /* AppDelegate.swift */; };
 		1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0412954E9390060E3AB /* SceneDelegate.swift */; };
-		1DA1A0442954E9390060E3AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0432954E9390060E3AB /* ViewController.swift */; };
 		1DA1A0472954E9390060E3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1A0452954E9390060E3AB /* Main.storyboard */; };
-		1DA1A04A2954E9390060E3AB /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0482954E9390060E3AB /* Notes.xcdatamodeld */; };
 		1DA1A04C2954E93B0060E3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1A04B2954E93B0060E3AB /* Assets.xcassets */; };
 		1DA1A04F2954E93B0060E3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1A04D2954E93B0060E3AB /* LaunchScreen.storyboard */; };
+		1DA1A0572954E9AF0060E3AB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0562954E9AF0060E3AB /* NotesViewController.swift */; };
+		1DA1A0592954EDB90060E3AB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0582954EDB90060E3AB /* Note.swift */; };
+		1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A05E295524BF0060E3AB /* NoteViewController.swift */; };
+		1DA1A0612955253C0060E3AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0602955253C0060E3AB /* Constants.swift */; };
+		1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DA1A03C2954E9390060E3AB /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA1A03F2954E9390060E3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA1A0412954E9390060E3AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DA1A0432954E9390060E3AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1DA1A0462954E9390060E3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1DA1A0492954E9390060E3AB /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		1DA1A04B2954E93B0060E3AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DA1A04E2954E93B0060E3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DA1A0502954E93B0060E3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DA1A0562954E9AF0060E3AB /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		1DA1A0582954EDB90060E3AB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		1DA1A05E295524BF0060E3AB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		1DA1A0602955253C0060E3AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			isa = PBXGroup;
 			children = (
 				1DA1A03E2954E9390060E3AB /* Notes */,
+				1DA1A03F2954E9390060E3AB /* AppDelegate.swift */,
+				1DA1A0412954E9390060E3AB /* SceneDelegate.swift */,
 				1DA1A03D2954E9390060E3AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,16 +66,49 @@
 		1DA1A03E2954E9390060E3AB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				1DA1A03F2954E9390060E3AB /* AppDelegate.swift */,
-				1DA1A0412954E9390060E3AB /* SceneDelegate.swift */,
-				1DA1A0432954E9390060E3AB /* ViewController.swift */,
-				1DA1A0452954E9390060E3AB /* Main.storyboard */,
-				1DA1A04B2954E93B0060E3AB /* Assets.xcassets */,
-				1DA1A04D2954E93B0060E3AB /* LaunchScreen.storyboard */,
-				1DA1A0502954E93B0060E3AB /* Info.plist */,
-				1DA1A0482954E9390060E3AB /* Notes.xcdatamodeld */,
+				1DA1A05A29550D3C0060E3AB /* Models */,
+				1DA1A05D29551CCE0060E3AB /* View */,
+				1DA1A05C29550DE00060E3AB /* Controllers */,
+				1DA1A05B29550D650060E3AB /* Resources */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		1DA1A05A29550D3C0060E3AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1A0582954EDB90060E3AB /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DA1A05B29550D650060E3AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1A0602955253C0060E3AB /* Constants.swift */,
+				1DA1A04D2954E93B0060E3AB /* LaunchScreen.storyboard */,
+				1DA1A04B2954E93B0060E3AB /* Assets.xcassets */,
+				1DA1A0502954E93B0060E3AB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1DA1A05C29550DE00060E3AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1A0562954E9AF0060E3AB /* NotesViewController.swift */,
+				1DA1A05E295524BF0060E3AB /* NoteViewController.swift */,
+				1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1DA1A05D29551CCE0060E3AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1A0452954E9390060E3AB /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA1A0442954E9390060E3AB /* ViewController.swift in Sources */,
+				1DA1A0592954EDB90060E3AB /* Note.swift in Sources */,
 				1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */,
 				1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */,
-				1DA1A04A2954E9390060E3AB /* Notes.xcdatamodeld in Sources */,
+				1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */,
+				1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */,
+				1DA1A0612955253C0060E3AB /* Constants.swift in Sources */,
+				1DA1A0572954E9AF0060E3AB /* NotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CCJ53Q5CP4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = Notes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CCJ53Q5CP4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = Notes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,19 +406,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1DA1A0482954E9390060E3AB /* Notes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1DA1A0492954E9390060E3AB /* Notes.xcdatamodel */,
-			);
-			currentVersion = 1DA1A0492954E9390060E3AB /* Notes.xcdatamodel */;
-			path = Notes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1DA1A0342954E9390060E3AB /* Project object */;
 }
