@@ -15,8 +15,10 @@ class NoteViewController: UIViewController {
         
         if newNote {
             noteTextView.becomeFirstResponder()
+            /// ↑   Для создания новой заметки, делает поле активным для ввода
         } else {
             noteTextView.text = noteText
+            /// ↑   Для показа заметки
         }
     }
     
@@ -25,9 +27,10 @@ class NoteViewController: UIViewController {
         
         if self.isMovingFromParent {
             returnText()
+            newNote = false
         }
+        /// ↑   Как только почти скрылся контроллер, текст передаается в замыкание
     }
-    
     
     // MARK: - Private functions
 

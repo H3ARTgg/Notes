@@ -7,8 +7,6 @@ struct Constants {
     
     static let noteVCID = "NoteVC"
     
-    static let newNoteVCID = "NewNote"
-    
     static let customCellNibName = "NoteCellWithButton"
     
     static let customCellID = "CustomCell"
@@ -17,3 +15,4 @@ struct Constants {
     
     static let mainNavConID = "MainNavigation"
 }
+/// ↑   Различные константы для надежности

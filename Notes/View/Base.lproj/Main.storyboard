@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +20,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sVT-Ig-VVi">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="E1f-Gn-Z9h" customClass="NoteCell" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
@@ -34,11 +36,11 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIL-np-Lj3">
                                                             <rect key="frame" x="20" y="19.5" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="Black-White"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="White-Black"/>
                                                     <constraints>
                                                         <constraint firstItem="jIL-np-Lj3" firstAttribute="centerY" secondItem="rUJ-MT-aid" secondAttribute="centerY" id="9Od-mm-KdU"/>
                                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jIL-np-Lj3" secondAttribute="trailing" constant="352" id="Xtg-3I-b4b"/>
@@ -46,7 +48,9 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="cellLabel" destination="jIL-np-Lj3" id="teQ-rI-i01"/>
                                             <outlet property="cellView" destination="rUJ-MT-aid" id="9Il-Ri-q1X"/>
@@ -58,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="426" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black-White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -75,11 +79,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Заметки" largeTitleDisplayMode="always" id="x0Z-iu-bQV">
                         <barButtonItem key="leftBarButtonItem" title="Изменить" id="B13-lj-eQT">
+                            <color key="tintColor" name="Blue-Orange"/>
                             <connections>
                                 <action selector="didTapEditButton" destination="8ER-BT-joe" id="fjw-tH-iNX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="ab7-Bs-Smo">
+                            <color key="tintColor" name="Blue-Orange"/>
                             <connections>
                                 <action selector="didTapNewNote" destination="8ER-BT-joe" id="kwa-Z4-ql2"/>
                             </connections>
@@ -105,13 +111,14 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-dI-fSW">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" name="Black-White"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cmT-4Q-CgH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="Blue-Orange"/>
                         <constraints>
                             <constraint firstItem="OrX-dI-fSW" firstAttribute="bottom" secondItem="cmT-4Q-CgH" secondAttribute="bottom" id="JV8-Cz-0Mf"/>
                             <constraint firstItem="OrX-dI-fSW" firstAttribute="top" secondItem="cmT-4Q-CgH" secondAttribute="top" id="Z5a-Bm-X7L"/>
@@ -125,40 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyM-GV-MEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092.753623188406" y="34.821428571428569"/>
-        </scene>
-        <!--New Note View Controller-->
-        <scene sceneID="sKb-DG-3eW">
-            <objects>
-                <viewController storyboardIdentifier="NewNote" id="86b-6h-YJ6" customClass="NewNoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kF9-kZ-3lc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-BH-MYx">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ePl-c3-EJr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ePl-c3-EJr" firstAttribute="trailing" secondItem="MkW-BH-MYx" secondAttribute="trailing" constant="20" id="130-Op-d4D"/>
-                            <constraint firstItem="MkW-BH-MYx" firstAttribute="bottom" secondItem="ePl-c3-EJr" secondAttribute="bottom" id="2MM-35-0ag"/>
-                            <constraint firstItem="MkW-BH-MYx" firstAttribute="leading" secondItem="ePl-c3-EJr" secondAttribute="leading" constant="20" id="Ye6-0V-Iax"/>
-                            <constraint firstItem="MkW-BH-MYx" firstAttribute="top" secondItem="ePl-c3-EJr" secondAttribute="top" id="lJ3-wr-oJm"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="noteTextView" destination="MkW-BH-MYx" id="u2C-3y-erl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsk-T2-akR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2282.608695652174" y="34.821428571428569"/>
+            <point key="canvasLocation" x="2254" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VOi-2U-b11">
@@ -168,6 +142,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Hm-GD-v7j">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="Blue-Orange"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
@@ -184,9 +161,15 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Black-White">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue-Orange">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White-Black">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

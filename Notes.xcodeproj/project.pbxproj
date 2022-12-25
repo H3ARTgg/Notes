@@ -16,11 +16,12 @@
 		1DA1A0592954EDB90060E3AB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0582954EDB90060E3AB /* Note.swift */; };
 		1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A05E295524BF0060E3AB /* NoteViewController.swift */; };
 		1DA1A0612955253C0060E3AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0602955253C0060E3AB /* Constants.swift */; };
-		1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */; };
 		1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3145829571DD8001D119B /* ButtonCheckbox.swift */; };
 		1DC3145D29572591001D119B /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3145C29572591001D119B /* NoteCell.swift */; };
 		1DC3146429573A30001D119B /* NoteCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146229573A30001D119B /* NoteCellWithButton.swift */; };
 		1DC3146529573A30001D119B /* NoteCellWithButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DC3146329573A30001D119B /* NoteCellWithButton.xib */; };
+		1DC3146B29580698001D119B /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146A29580698001D119B /* SaveData.swift */; };
+		1DC3146D295808DA001D119B /* SaveDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146C295808DA001D119B /* SaveDataProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +36,12 @@
 		1DA1A0582954EDB90060E3AB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		1DA1A05E295524BF0060E3AB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		1DA1A0602955253C0060E3AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		1DC3145829571DD8001D119B /* ButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCheckbox.swift; sourceTree = "<group>"; };
 		1DC3145C29572591001D119B /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		1DC3146229573A30001D119B /* NoteCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellWithButton.swift; sourceTree = "<group>"; };
 		1DC3146329573A30001D119B /* NoteCellWithButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellWithButton.xib; sourceTree = "<group>"; };
+		1DC3146A29580698001D119B /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		1DC3146C295808DA001D119B /* SaveDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,8 @@
 			children = (
 				1DC3145829571DD8001D119B /* ButtonCheckbox.swift */,
 				1DA1A0582954EDB90060E3AB /* Note.swift */,
+				1DC3146A29580698001D119B /* SaveData.swift */,
+				1DC3146C295808DA001D119B /* SaveDataProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,7 +111,6 @@
 			children = (
 				1DA1A0562954E9AF0060E3AB /* NotesViewController.swift */,
 				1DA1A05E295524BF0060E3AB /* NoteViewController.swift */,
-				1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,7 +202,8 @@
 				1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */,
 				1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */,
 				1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */,
-				1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */,
+				1DC3146D295808DA001D119B /* SaveDataProtocol.swift in Sources */,
+				1DC3146B29580698001D119B /* SaveData.swift in Sources */,
 				1DC3146429573A30001D119B /* NoteCellWithButton.swift in Sources */,
 				1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */,
 				1DC3145D29572591001D119B /* NoteCell.swift in Sources */,

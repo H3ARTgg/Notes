@@ -6,23 +6,32 @@ class NotesViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noNotesLabel: UILabel!
+    private var saveData: SaveDataProtocol?
     private var isEditButtonDidTapped: Bool = false
     private var rowsWhichAreChecked = [IndexPath]()
-    private var notes: [Note] =
-    [
-        Note(text: "Текст")
-    ]
+    private var notes: [Note] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         tableView.rowHeight = 60
         tableView.delegate = self
         tableView.dataSource = self
         
+        saveData = SaveData()
+        if let notes = saveData?.notes {
+            self.notes = notes
+        }
+        
         showNoNotesLabelAndHideTableViewOrNot()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        saveData?.store(notes: notes)
     }
     
     // MARK: - IBActions
@@ -37,12 +46,11 @@ class NotesViewController: UIViewController {
 
             if text.isEmpty {
                 self.navigationController?.popToRootViewController(animated: true)
-                self.tableView.reloadData()
                 self.showNoNotesLabelAndHideTableViewOrNot()
             } else {
                 self.navigationController?.popToRootViewController(animated: true)
                 self.notes.append(Note(text: text))
-                self.tableView.reloadData()
+                self.saveData?.store(notes: self.notes)
                 self.showNoNotesLabelAndHideTableViewOrNot()
             }
         }
@@ -82,23 +90,6 @@ class NotesViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func didRecieveNote(note: Note) {
-        if note.text.isEmpty {
-            navigationController?.popToRootViewController(animated: true)
-            tableView.reloadData()
-            showNoNotesLabelAndHideTableViewOrNot()
-        } else {
-            navigationController?.popToRootViewController(animated: true)
-            notes.append(note)
-            tableView.reloadData()
-            showNoNotesLabelAndHideTableViewOrNot()
-        }
-    }
-    
-//    func pushNavigationController(viewController: UIViewController) {
-//        navigationController?.pushViewController(viewController, animated: true)
-//    }
-    
     // MARK: - Private functions
     
     // Нажатие кнопки "Удалить" для селектора из функции didTapEditButton
@@ -120,12 +111,13 @@ class NotesViewController: UIViewController {
             }
             
             didTapEditButton()
-            tableView.reloadData()
             showNoNotesLabelAndHideTableViewOrNot()
+            saveData?.store(notes: notes)
             /// ↑   Вызываем didTapEditButton чтобы переключить значение isEditButtonDidTapped и вернуть прежний вид правой кнопке в NavigationController. Остальное говорит само за себя
         } else {
             didTapEditButton()
             showNoNotesLabelAndHideTableViewOrNot()
+            saveData?.store(notes: notes)
             /// ↑   Если нет "выбранных ячеек", то возращаем прежний вид
             
         }
@@ -139,6 +131,8 @@ class NotesViewController: UIViewController {
             noNotesLabel.isHidden = true
             tableView.isHidden = false
         }
+        
+        tableView.reloadData()
         /// ↑   Показывает лэйбл "Нет заметок" и прячет tableView
     }
 }
@@ -205,14 +199,14 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
                 if text.isEmpty {
                     self.navigationController?.popToRootViewController(animated: true)
                     self.notes.remove(at: indexPath.row)
-                    tableView.reloadData()
                     self.showNoNotesLabelAndHideTableViewOrNot()
+                    self.saveData?.store(notes: self.notes)
                 } else {
                     self.navigationController?.popToRootViewController(animated: true)
                     self.notes.remove(at: indexPath.row)
                     self.notes.insert(Note(text: text), at: indexPath.row)
-                    tableView.reloadData()
                     self.showNoNotesLabelAndHideTableViewOrNot()
+                    self.saveData?.store(notes: self.notes)
                 }
             }
             navigationController?.pushViewController(viewController, animated: true)
@@ -229,8 +223,8 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
         if !isEditButtonDidTapped {
             if editingStyle == .delete {
                 self.notes.remove(at: indexPath.row)
-                self.tableView.reloadData()
                 showNoNotesLabelAndHideTableViewOrNot()
+                saveData?.store(notes: notes)
                 /// ↑   При удалении через свайп
             }
         }
