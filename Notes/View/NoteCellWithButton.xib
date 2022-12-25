@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="KGk-i7-Jjw" customClass="NoteCellWithButton" customModule="Notes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPU-zJ-biA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBA-lM-uhq">
+                                <rect key="frame" x="70" y="11.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21U-kV-dpn" customClass="ButtonCheckbox" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9tr-MA-wAb"/>
+                                    <constraint firstAttribute="width" constant="30" id="l4l-Jv-ZPj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OBA-lM-uhq" firstAttribute="centerY" secondItem="QPU-zJ-biA" secondAttribute="centerY" id="EkJ-x2-D1u"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OBA-lM-uhq" secondAttribute="trailing" constant="208" id="Mjc-1z-GN1"/>
+                            <constraint firstItem="21U-kV-dpn" firstAttribute="leading" secondItem="QPU-zJ-biA" secondAttribute="leading" constant="20" id="fqk-zx-bZw"/>
+                            <constraint firstItem="OBA-lM-uhq" firstAttribute="leading" secondItem="21U-kV-dpn" secondAttribute="trailing" constant="20" id="phh-B2-Uww"/>
+                            <constraint firstItem="21U-kV-dpn" firstAttribute="centerY" secondItem="QPU-zJ-biA" secondAttribute="centerY" id="yIn-TI-XO3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QPU-zJ-biA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="F0d-du-oYn"/>
+                    <constraint firstAttribute="bottom" secondItem="QPU-zJ-biA" secondAttribute="bottom" id="faS-Mc-ovo"/>
+                    <constraint firstAttribute="trailing" secondItem="QPU-zJ-biA" secondAttribute="trailing" id="kVm-Fe-KdU"/>
+                    <constraint firstItem="QPU-zJ-biA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sMz-Fa-i1x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellButton" destination="21U-kV-dpn" id="IFb-1b-cvY"/>
+                <outlet property="cellLabel" destination="OBA-lM-uhq" id="V9Y-9n-d7C"/>
+                <outlet property="cellView" destination="QPU-zJ-biA" id="Wbs-Tb-9FV"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

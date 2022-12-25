@@ -17,6 +17,10 @@
 		1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A05E295524BF0060E3AB /* NoteViewController.swift */; };
 		1DA1A0612955253C0060E3AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A0602955253C0060E3AB /* Constants.swift */; };
 		1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */; };
+		1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3145829571DD8001D119B /* ButtonCheckbox.swift */; };
+		1DC3145D29572591001D119B /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3145C29572591001D119B /* NoteCell.swift */; };
+		1DC3146429573A30001D119B /* NoteCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146229573A30001D119B /* NoteCellWithButton.swift */; };
+		1DC3146529573A30001D119B /* NoteCellWithButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DC3146329573A30001D119B /* NoteCellWithButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		1DA1A05E295524BF0060E3AB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		1DA1A0602955253C0060E3AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1DA1A06229552CC40060E3AB /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		1DC3145829571DD8001D119B /* ButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCheckbox.swift; sourceTree = "<group>"; };
+		1DC3145C29572591001D119B /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		1DC3146229573A30001D119B /* NoteCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellWithButton.swift; sourceTree = "<group>"; };
+		1DC3146329573A30001D119B /* NoteCellWithButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellWithButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		1DA1A05A29550D3C0060E3AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DC3145829571DD8001D119B /* ButtonCheckbox.swift */,
 				1DA1A0582954EDB90060E3AB /* Note.swift */,
 			);
 			path = Models;
@@ -106,6 +115,9 @@
 		1DA1A05D29551CCE0060E3AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DC3145C29572591001D119B /* NoteCell.swift */,
+				1DC3146229573A30001D119B /* NoteCellWithButton.swift */,
+				1DC3146329573A30001D119B /* NoteCellWithButton.xib */,
 				1DA1A0452954E9390060E3AB /* Main.storyboard */,
 			);
 			path = View;
@@ -170,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA1A04F2954E93B0060E3AB /* LaunchScreen.storyboard in Resources */,
+				1DC3146529573A30001D119B /* NoteCellWithButton.xib in Resources */,
 				1DA1A04C2954E93B0060E3AB /* Assets.xcassets in Resources */,
 				1DA1A0472954E9390060E3AB /* Main.storyboard in Resources */,
 			);
@@ -184,9 +197,12 @@
 			files = (
 				1DA1A0592954EDB90060E3AB /* Note.swift in Sources */,
 				1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */,
+				1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */,
 				1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */,
 				1DA1A06329552CC40060E3AB /* NewNoteViewController.swift in Sources */,
+				1DC3146429573A30001D119B /* NoteCellWithButton.swift in Sources */,
 				1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */,
+				1DC3145D29572591001D119B /* NoteCell.swift in Sources */,
 				1DA1A0612955253C0060E3AB /* Constants.swift in Sources */,
 				1DA1A0572954E9AF0060E3AB /* NotesViewController.swift in Sources */,
 			);
