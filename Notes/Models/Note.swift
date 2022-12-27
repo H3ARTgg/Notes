@@ -1,4 +1,6 @@
+import Foundation
+
 struct Note: Codable {
-    let text: String
+    let text: AttributedString
 }
 /// ↑   Модель заметки

@@ -6,6 +6,7 @@ class NotesViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noNotesLabel: UILabel!
+    
     private var saveData: SaveDataProtocol?
     private var isEditButtonDidTapped: Bool = false
     private var rowsWhichAreChecked = [IndexPath]()
@@ -23,6 +24,8 @@ class NotesViewController: UIViewController {
         if let notes = saveData?.notes {
             self.notes = notes
         }
+        /// ↑   Получаем переменную с нашими заметками и присваиваем notes при старте
+        
         
         showNoNotesLabelAndHideTableViewOrNot()
         
@@ -32,6 +35,7 @@ class NotesViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         saveData?.store(notes: notes)
+        /// ↑   При уходе с viewController'а сохранить данные
     }
     
     // MARK: - IBActions
@@ -44,12 +48,12 @@ class NotesViewController: UIViewController {
         viewController.completion = { [weak self] text in
             guard let self = self else { return }
 
-            if text.isEmpty {
+            if text.length == .zero {
                 self.navigationController?.popToRootViewController(animated: true)
                 self.showNoNotesLabelAndHideTableViewOrNot()
             } else {
                 self.navigationController?.popToRootViewController(animated: true)
-                self.notes.append(Note(text: text))
+                self.notes.append(Note(text: AttributedString(text)))
                 self.saveData?.store(notes: self.notes)
                 self.showNoNotesLabelAndHideTableViewOrNot()
             }
@@ -97,13 +101,13 @@ class NotesViewController: UIViewController {
         if !rowsWhichAreChecked.isEmpty {
             for path in rowsWhichAreChecked {
                 notes.remove(at: path.row)
-                notes.insert(Note(text: ""), at: path.row)
+                notes.insert(Note(text: AttributedString("")), at: path.row)
             }
             /// ↑   Если в массиве есть выбранные ячейки, то заменяем наши выбранные индексы в notes на пустой текст.
             /// Зачем? Потому что если выбранные элементы имеют индекс 1, 3 и 5 из rowsWhichAreChecked (из 5 элементов в notes), то при удалении из notes значения под индексом 1 - notes индексы съедут до 4. Далее мы удаляем "3" индекс и в notes это будет уже не то значение под индексом "3", а то, что выше
             
             for _ in notes {
-                let note = Note(text: "")
+                let note = Note(text: AttributedString(""))
                 if let index = notes.firstIndex(where: {$0.text == note.text }) {
                     notes.remove(at: index)
                 }
@@ -150,7 +154,7 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
         if isEditButtonDidTapped {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.customCellID, for: indexPath) as? NoteCellWithButton else { return UITableViewCell() }
             
-            cell.cellLabel.text = notes[indexPath.row].text
+            cell.cellLabel.attributedText = NSAttributedString(notes[indexPath.row].text)
 
             if !rowsWhichAreChecked.contains(indexPath) {
                 cell.cellButton.isChecked = false
@@ -163,7 +167,7 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
             
             // В случае, если кнопка "Edit" не нажата (false)
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID, for: indexPath) as? NoteCell else { return UITableViewCell() }
-            cell.cellLabel.text = notes[indexPath.row].text
+            cell.cellLabel.attributedText = NSAttributedString(notes[indexPath.row].text)
             
             return cell
         }
@@ -192,11 +196,11 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let viewController = UIStoryboard(name: Constants.storyboardID, bundle: .main).instantiateViewController(withIdentifier: Constants.noteVCID) as? NoteViewController else { return }
             
-            viewController.noteText = notes[indexPath.row].text
+            viewController.noteText = NSAttributedString(notes[indexPath.row].text)
             viewController.completion = { [weak self] text in
                 guard let self = self else { return }
                 
-                if text.isEmpty {
+                if text.length == .zero {
                     self.navigationController?.popToRootViewController(animated: true)
                     self.notes.remove(at: indexPath.row)
                     self.showNoNotesLabelAndHideTableViewOrNot()
@@ -204,7 +208,7 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     self.navigationController?.popToRootViewController(animated: true)
                     self.notes.remove(at: indexPath.row)
-                    self.notes.insert(Note(text: text), at: indexPath.row)
+                    self.notes.insert(Note(text: AttributedString(text)), at: indexPath.row)
                     self.showNoNotesLabelAndHideTableViewOrNot()
                     self.saveData?.store(notes: self.notes)
                 }

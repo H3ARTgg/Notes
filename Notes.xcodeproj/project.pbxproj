@@ -22,6 +22,10 @@
 		1DC3146529573A30001D119B /* NoteCellWithButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DC3146329573A30001D119B /* NoteCellWithButton.xib */; };
 		1DC3146B29580698001D119B /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146A29580698001D119B /* SaveData.swift */; };
 		1DC3146D295808DA001D119B /* SaveDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146C295808DA001D119B /* SaveDataProtocol.swift */; };
+		1DC3146F29593076001D119B /* NoteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146E29593076001D119B /* NoteToolbar.swift */; };
+		1DC3147329593B64001D119B /* NoteToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3147229593B64001D119B /* NoteToolbarDelegate.swift */; };
+		1DC314752959450A001D119B /* NoteToolbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC314742959450A001D119B /* NoteToolbarProtocol.swift */; };
+		1DC3147D295A8F18001D119B /* UIFont+extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		1DC3146329573A30001D119B /* NoteCellWithButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellWithButton.xib; sourceTree = "<group>"; };
 		1DC3146A29580698001D119B /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		1DC3146C295808DA001D119B /* SaveDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataProtocol.swift; sourceTree = "<group>"; };
+		1DC3146E29593076001D119B /* NoteToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbar.swift; sourceTree = "<group>"; };
+		1DC3147229593B64001D119B /* NoteToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarDelegate.swift; sourceTree = "<group>"; };
+		1DC314742959450A001D119B /* NoteToolbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarProtocol.swift; sourceTree = "<group>"; };
+		1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 				1DA1A05A29550D3C0060E3AB /* Models */,
 				1DA1A05D29551CCE0060E3AB /* View */,
 				1DA1A05C29550DE00060E3AB /* Controllers */,
+				1DC3147B295A8EFC001D119B /* Helpers */,
 				1DA1A05B29550D650060E3AB /* Resources */,
 			);
 			path = Notes;
@@ -91,6 +100,8 @@
 				1DA1A0582954EDB90060E3AB /* Note.swift */,
 				1DC3146A29580698001D119B /* SaveData.swift */,
 				1DC3146C295808DA001D119B /* SaveDataProtocol.swift */,
+				1DC314742959450A001D119B /* NoteToolbarProtocol.swift */,
+				1DC3147229593B64001D119B /* NoteToolbarDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,12 +129,21 @@
 		1DA1A05D29551CCE0060E3AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DC3146E29593076001D119B /* NoteToolbar.swift */,
 				1DC3145C29572591001D119B /* NoteCell.swift */,
 				1DC3146229573A30001D119B /* NoteCellWithButton.swift */,
 				1DC3146329573A30001D119B /* NoteCellWithButton.xib */,
 				1DA1A0452954E9390060E3AB /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1DC3147B295A8EFC001D119B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,12 +221,16 @@
 				1DA1A0592954EDB90060E3AB /* Note.swift in Sources */,
 				1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */,
 				1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */,
+				1DC3147D295A8F18001D119B /* UIFont+extenstion.swift in Sources */,
 				1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */,
 				1DC3146D295808DA001D119B /* SaveDataProtocol.swift in Sources */,
+				1DC3146F29593076001D119B /* NoteToolbar.swift in Sources */,
 				1DC3146B29580698001D119B /* SaveData.swift in Sources */,
+				1DC314752959450A001D119B /* NoteToolbarProtocol.swift in Sources */,
 				1DC3146429573A30001D119B /* NoteCellWithButton.swift in Sources */,
 				1DA1A05F295524BF0060E3AB /* NoteViewController.swift in Sources */,
 				1DC3145D29572591001D119B /* NoteCell.swift in Sources */,
+				1DC3147329593B64001D119B /* NoteToolbarDelegate.swift in Sources */,
 				1DA1A0612955253C0060E3AB /* Constants.swift in Sources */,
 				1DA1A0572954E9AF0060E3AB /* NotesViewController.swift in Sources */,
 			);
@@ -361,6 +385,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,6 +414,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -14,5 +14,7 @@ struct Constants {
     static let cellID = "Cell"
     
     static let mainNavConID = "MainNavigation"
+    
+    static let changeFontVCID = "FontVC"
 }
 /// ↑   Различные константы для надежности

@@ -6,6 +6,7 @@ class SaveData: SaveDataProtocol {
     }
     
     private let userDefaults = UserDefaults.standard
+    
     private(set) var notes: [Note] {
         get {
             guard let data = userDefaults.data(forKey: Key.notes.rawValue),
@@ -29,4 +30,5 @@ class SaveData: SaveDataProtocol {
     func store(notes: [Note]) {
         self.notes = notes
     }
+    /// ↑   Для сохранения данных
 }
