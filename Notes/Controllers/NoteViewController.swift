@@ -70,19 +70,21 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если выделенный диапазон равен нулю и кнопка italic не нажата, то печатем bold, а также при нажатиях переключаемся между обычным и bold
         if selectedRange.length == 0 && !isItalicButtonTappedWithoutSelection {
-            if !isBoldButtonTappedWithoutSelection {
+            switch isBoldButtonTappedWithoutSelection {
+            case false:
                 isBoldButtonTappedWithoutSelection = true
                 noteTextView.typingAttributes[.font] = defaultFont.bold
-            } else {
+            case true:
                 isBoldButtonTappedWithoutSelection = false
                 noteTextView.typingAttributes[.font] = defaultFont
             }
             // Если кнопка italic нажата, то печатаем bold-italic, переключаемся между bold-italic и italic
         } else if selectedRange.length == 0 && isItalicButtonTappedWithoutSelection {
-            if !isBoldButtonTappedWithoutSelection {
-                isItalicButtonTappedWithoutSelection = true
+            switch isBoldButtonTappedWithoutSelection {
+            case false:
+                isBoldButtonTappedWithoutSelection = true
                 noteTextView.typingAttributes[.font] = defaultFont.boldItalic
-            } else {
+            case true:
                 isBoldButtonTappedWithoutSelection = false
                 noteTextView.typingAttributes[.font] = defaultFont.italic
             }
@@ -90,31 +92,17 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если что-то выделено
         if selectedRange.length > 0 {
-            guard let nowFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
+            guard let currentFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
-            
-            var resultOfChecking: Int = -1
-            /// ↑   0 - default, 1 - italic, 2 - bold, 3 - boldItalic
-            
-            if nowFont == defaultFont {
-                resultOfChecking = 0
-            } else if nowFont == defaultFont.italic{
-                resultOfChecking = 1
-            } else if nowFont == defaultFont.bold {
-                resultOfChecking = 2
-            } else if nowFont == defaultFont.boldItalic {
-                resultOfChecking = 3
-            }
-            /// ↑   Сравниваем различные возможные комбинации шрифтов с полученным шрифтом
-            
-            switch resultOfChecking {
-            case 0:
+       
+            switch currentFont {
+            case defaultFont:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.bold, range: selectedRange)
-            case 1:
+            case defaultFont.italic:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.boldItalic, range: selectedRange)
-            case 2:
+            case defaultFont.bold:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            case 3:
+            case defaultFont.boldItalic:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.italic, range: selectedRange)
             default:
                 print("Что-то пошло не так с didBoldButtonTapped")
@@ -134,19 +122,21 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если выделенный диапазон равен нулю и кнопка bold не нажата, то печатем italic, а также при нажатиях переключаемся между обычным и italic
         if selectedRange.length == 0 && !isBoldButtonTappedWithoutSelection {
-            if !isItalicButtonTappedWithoutSelection {
+            switch isItalicButtonTappedWithoutSelection {
+            case false:
                 isItalicButtonTappedWithoutSelection = true
                 noteTextView.typingAttributes[.font] = defaultFont.italic
-            } else {
+            case true:
                 isItalicButtonTappedWithoutSelection = false
                 noteTextView.typingAttributes[.font] = defaultFont
             }
             // Если кнопка bold нажата, то печатаем bold-italic, переключаемся между bold-italic и bold
         } else if selectedRange.length == 0 && isBoldButtonTappedWithoutSelection {
-            if !isItalicButtonTappedWithoutSelection {
+            switch isItalicButtonTappedWithoutSelection {
+            case false:
                 isItalicButtonTappedWithoutSelection = true
                 noteTextView.typingAttributes[.font] = defaultFont.boldItalic
-            } else {
+            case true:
                 isItalicButtonTappedWithoutSelection = false
                 noteTextView.typingAttributes[.font] = defaultFont.bold
             }
@@ -157,28 +147,14 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
             guard let nowFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
             
-            var resultOfChecking: Int = -1
-            /// ↑   0 - default, 1 - italic, 2 - bold, 3 - boldItalic
-            
-            if nowFont == defaultFont {
-                resultOfChecking = 0
-            } else if nowFont == defaultFont.italic{
-                resultOfChecking = 1
-            } else if nowFont == defaultFont.bold {
-                resultOfChecking = 2
-            } else if nowFont == defaultFont.boldItalic {
-                resultOfChecking = 3
-            }
-            /// ↑   Сравниваем различные возможные комбинации шрифтов с полученным шрифтом
-            
-            switch resultOfChecking {
-            case 0:
+            switch nowFont {
+            case defaultFont:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.italic, range: selectedRange)
-            case 1:
+            case defaultFont.italic:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            case 2:
+            case defaultFont.bold:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.boldItalic, range: selectedRange)
-            case 3:
+            case defaultFont.boldItalic:
                 noteTextView.textStorage.addAttribute(.font, value: defaultFont.bold, range: selectedRange)
             default:
                 print("Что-то пошло не так с didItalicButtonTapped")
