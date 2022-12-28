@@ -12,7 +12,6 @@ class NotesViewController: UIViewController {
     private var rowsWhichAreChecked = [IndexPath]()
     private var notes: [Note] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +54,7 @@ class NotesViewController: UIViewController {
                 self.navigationController?.popToRootViewController(animated: true)
                 self.notes.append(Note(text: AttributedString(text)))
                 self.saveData?.store(notes: self.notes)
+                self.notes.reverse()
                 self.showNoNotesLabelAndHideTableViewOrNot()
             }
         }
