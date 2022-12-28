@@ -95,19 +95,14 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
             guard let currentFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
        
-            switch currentFont {
-            case defaultFont:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.bold, range: selectedRange)
-            case defaultFont.italic:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.boldItalic, range: selectedRange)
-            case defaultFont.bold:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            case defaultFont.boldItalic:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.italic, range: selectedRange)
-            default:
-                print("Что-то пошло не так с didBoldButtonTapped")
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            }
+            realizationForCurrentFontWithComparingToDefaultFont(
+                selectedRange: selectedRange,
+                defaultFont: defaultFont,
+                currentFont: currentFont,
+                equalToDefault: defaultFont.bold,
+                equalToItalic: defaultFont.boldItalic,
+                equalToBold: defaultFont,
+                equalToBoldItalic: defaultFont.italic)
             /// ↑   В зависимости от шрифта ставим другой шрифт
         }
     }
@@ -144,22 +139,17 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если что-то выделено
         if selectedRange.length > 0 {
-            guard let nowFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
+            guard let currentFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
             
-            switch nowFont {
-            case defaultFont:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.italic, range: selectedRange)
-            case defaultFont.italic:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            case defaultFont.bold:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.boldItalic, range: selectedRange)
-            case defaultFont.boldItalic:
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont.bold, range: selectedRange)
-            default:
-                print("Что-то пошло не так с didItalicButtonTapped")
-                noteTextView.textStorage.addAttribute(.font, value: defaultFont, range: selectedRange)
-            }
+            realizationForCurrentFontWithComparingToDefaultFont(
+                selectedRange: selectedRange,
+                defaultFont: defaultFont,
+                currentFont: currentFont,
+                equalToDefault: defaultFont.italic,
+                equalToItalic: defaultFont,
+                equalToBold: defaultFont.boldItalic,
+                equalToBoldItalic: defaultFont.bold)
             /// ↑   В зависимости от шрифта ставим другой шрифт
         }
     }
@@ -169,6 +159,23 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
     
     @objc private func didDoneTapped() {
         view.endEditing(true)
+    }
+    
+    private func realizationForCurrentFontWithComparingToDefaultFont(selectedRange: NSRange, defaultFont: UIFont, currentFont: UIFont, equalToDefault: UIFont, equalToItalic: UIFont, equalToBold: UIFont, equalToBoldItalic: UIFont) {
+        switch currentFont {
+        case defaultFont:
+            noteTextView.textStorage.addAttribute(.font, value: equalToDefault, range: selectedRange)
+        case defaultFont.italic:
+            noteTextView.textStorage.addAttribute(.font, value: equalToItalic, range: selectedRange)
+        case defaultFont.bold:
+            noteTextView.textStorage.addAttribute(.font, value: equalToBold, range: selectedRange)
+        case defaultFont.boldItalic:
+            noteTextView.textStorage.addAttribute(.font, value: equalToBoldItalic, range: selectedRange)
+        default:
+            print("Что-то пошло не так с didItalicButtonTapped")
+            noteTextView.textStorage.addAttribute(.font, value: equalToDefault, range: selectedRange)
+        }
+        /// ↑   В зависимости от шрифта ставим другой шрифт
     }
     
     // Передаем текст в наше замыкание и, если была нажата клавиша жирности или italic, убираем их эффект (false), чтобы в последующие разы редактирования текст не продолжался печататься жирным
