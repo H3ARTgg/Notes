@@ -20,6 +20,9 @@ class NoteToolbar: UIToolbar, NoteToolbarProtocol {
         fixedSpace.width = 30.0
         boldButton.width = 20.0
         italicButton.width = 20.0
+        
+        boldButton.tintColor = UIColor(named: "Blue-Orange")
+        italicButton.tintColor = UIColor(named: "Blue-Orange")
             
         self.setItems([boldButton, fixedSpace, italicButton], animated: false)
     }
