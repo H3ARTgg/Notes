@@ -63,7 +63,6 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
     func didBoldButtonTapped() {
         guard let fontSize = noteTextView.font?.pointSize else { return }
         
-        let textStorage = noteTextView.textStorage
         let selectedLocation = noteTextView.selectedRange.location
         let selectedRange = noteTextView.selectedRange
         let defaultFont = UIFont.systemFont(ofSize: fontSize)
@@ -92,7 +91,7 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если что-то выделено
         if selectedRange.length > 0 {
-            guard let currentFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
+            guard let currentFont = noteTextView.textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
        
             realizationForCurrentFontWithComparingToDefaultFont(
@@ -110,7 +109,6 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
     func didItalicButtonTapped() {
         guard let fontSize = noteTextView.font?.pointSize else { return }
         
-        let textStorage = noteTextView.textStorage
         let selectedLocation = noteTextView.selectedRange.location
         let selectedRange = noteTextView.selectedRange
         let defaultFont = UIFont.systemFont(ofSize: fontSize)
@@ -139,7 +137,7 @@ class NoteViewController: UIViewController, UITextViewDelegate, NoteToolbarDeleg
         
         // Если что-то выделено
         if selectedRange.length > 0 {
-            guard let currentFont = textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
+            guard let currentFont = noteTextView.textStorage.attribute(.font, at: selectedLocation, effectiveRange: nil) as? UIFont else { return }
             /// ↑   Получаем UIFont выделенного текста
             
             realizationForCurrentFontWithComparingToDefaultFont(

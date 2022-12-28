@@ -96,7 +96,6 @@
 		1DA1A05A29550D3C0060E3AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1DC3145829571DD8001D119B /* ButtonCheckbox.swift */,
 				1DA1A0582954EDB90060E3AB /* Note.swift */,
 				1DC3146A29580698001D119B /* SaveData.swift */,
 				1DC3146C295808DA001D119B /* SaveDataProtocol.swift */,
@@ -129,6 +128,7 @@
 		1DA1A05D29551CCE0060E3AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DC3145829571DD8001D119B /* ButtonCheckbox.swift */,
 				1DC3146E29593076001D119B /* NoteToolbar.swift */,
 				1DC3145C29572591001D119B /* NoteCell.swift */,
 				1DC3146229573A30001D119B /* NoteCellWithButton.swift */,
