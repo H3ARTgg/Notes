@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class SaveData: SaveDataProtocol {
     private enum Key: String {
@@ -11,7 +12,13 @@ class SaveData: SaveDataProtocol {
         get {
             guard let data = userDefaults.data(forKey: Key.notes.rawValue),
                 let result = try? PropertyListDecoder().decode([Note].self, from: data) else {
-                return .init(arrayLiteral: Note(text: "Новая заметка"))
+                let attributedString = AttributedString("Новая заметка", attributes:
+                    AttributeContainer([
+                        .foregroundColor : UIColor(named: "Black-White") ?? .black,
+                        .font : UIFont.systemFont(ofSize: 20)
+                        ]))
+                
+                return .init(arrayLiteral: Note(text: attributedString))
             }
             
             return result

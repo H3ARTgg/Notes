@@ -25,7 +25,7 @@
 		1DC3146F29593076001D119B /* NoteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3146E29593076001D119B /* NoteToolbar.swift */; };
 		1DC3147329593B64001D119B /* NoteToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3147229593B64001D119B /* NoteToolbarDelegate.swift */; };
 		1DC314752959450A001D119B /* NoteToolbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC314742959450A001D119B /* NoteToolbarProtocol.swift */; };
-		1DC3147D295A8F18001D119B /* UIFont+extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */; };
+		1DC3147D295A8F18001D119B /* UIFont + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3147C295A8F18001D119B /* UIFont + Extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		1DC3146E29593076001D119B /* NoteToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbar.swift; sourceTree = "<group>"; };
 		1DC3147229593B64001D119B /* NoteToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarDelegate.swift; sourceTree = "<group>"; };
 		1DC314742959450A001D119B /* NoteToolbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarProtocol.swift; sourceTree = "<group>"; };
-		1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extenstion.swift"; sourceTree = "<group>"; };
+		1DC3147C295A8F18001D119B /* UIFont + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 		1DC3147B295A8EFC001D119B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1DC3147C295A8F18001D119B /* UIFont+extenstion.swift */,
+				1DC3147C295A8F18001D119B /* UIFont + Extenstion.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 				1DA1A0592954EDB90060E3AB /* Note.swift in Sources */,
 				1DA1A0402954E9390060E3AB /* AppDelegate.swift in Sources */,
 				1DC3145929571DD8001D119B /* ButtonCheckbox.swift in Sources */,
-				1DC3147D295A8F18001D119B /* UIFont+extenstion.swift in Sources */,
+				1DC3147D295A8F18001D119B /* UIFont + Extenstion.swift in Sources */,
 				1DA1A0422954E9390060E3AB /* SceneDelegate.swift in Sources */,
 				1DC3146D295808DA001D119B /* SaveDataProtocol.swift in Sources */,
 				1DC3146F29593076001D119B /* NoteToolbar.swift in Sources */,
