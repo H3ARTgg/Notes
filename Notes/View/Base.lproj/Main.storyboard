@@ -18,8 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sVT-Ig-VVi">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="774" id="Obf-8N-HZ2"/>
+                                    <constraint firstAttribute="width" constant="414" id="sZ0-ak-mk5"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="E1f-Gn-Z9h" customClass="NoteCell" customModule="Notes" customModuleProvider="target">
@@ -59,7 +63,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пока нет заметок" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4rK-gc-hci">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="426" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" name="Black-White"/>
@@ -69,12 +73,12 @@
                         <viewLayoutGuide key="safeArea" id="3pe-Cd-sEF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="trailing" secondItem="3pe-Cd-sEF" secondAttribute="trailing" id="6jB-eh-o1y"/>
-                            <constraint firstItem="4rK-gc-hci" firstAttribute="centerX" secondItem="eDe-LL-StS" secondAttribute="centerX" id="E5z-EF-lJE"/>
-                            <constraint firstItem="4rK-gc-hci" firstAttribute="centerY" secondItem="eDe-LL-StS" secondAttribute="centerY" id="GaE-61-hFc"/>
-                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="top" secondItem="3pe-Cd-sEF" secondAttribute="top" id="QCG-Uk-Yhg"/>
-                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="leading" secondItem="3pe-Cd-sEF" secondAttribute="leading" id="aTt-8g-gfx"/>
-                            <constraint firstAttribute="bottom" secondItem="sVT-Ig-VVi" secondAttribute="bottom" id="gtL-3d-4sl"/>
+                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="top" secondItem="eDe-LL-StS" secondAttribute="top" constant="88" id="6jg-vq-6T6"/>
+                            <constraint firstItem="4rK-gc-hci" firstAttribute="centerY" secondItem="eDe-LL-StS" secondAttribute="centerY" id="Cxn-Ni-8He"/>
+                            <constraint firstItem="4rK-gc-hci" firstAttribute="centerX" secondItem="eDe-LL-StS" secondAttribute="centerX" constant="-19.5" id="TIZ-ne-0Fi"/>
+                            <constraint firstAttribute="trailing" secondItem="sVT-Ig-VVi" secondAttribute="trailing" id="fH5-wy-Z10"/>
+                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="leading" secondItem="eDe-LL-StS" secondAttribute="leading" id="iBt-1h-SZ0"/>
+                            <constraint firstItem="sVT-Ig-VVi" firstAttribute="bottom" secondItem="3pe-Cd-sEF" secondAttribute="bottom" id="t7Y-PR-FHc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Заметки" largeTitleDisplayMode="always" id="x0Z-iu-bQV">
@@ -98,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XES-iE-gRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.3188405797102" y="34.821428571428569"/>
+            <point key="canvasLocation" x="1460.4910714285713" y="33.333333333333336"/>
         </scene>
         <!--Note View Controller-->
         <scene sceneID="7eh-sk-BR4">
